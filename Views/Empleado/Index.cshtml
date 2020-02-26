@@ -1,0 +1,37 @@
+﻿@using WebApp.Models;
+@model List<EmpleadoCLS>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Agregar", "Agregar", "Empleado", null, new { @class = "btn btn-primary " })
+
+<table class="table table-bordered table-hover ">
+
+    <thead>
+        <tr>
+            <td>@Html.LabelFor(p => Model[0].Iiempleado) </td>
+            <td>@Html.LabelFor(p => Model[0].nombreEmpleado)</td>
+            <td>@Html.LabelFor(p => Model[0].aPaterno)</td>
+            <td>@Html.LabelFor(p => Model[0].nombreTipoUsuario)</td>
+            <td>@Html.LabelFor(p => Model[0].nombreTipoContrato)</td>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Iiempleado</td>
+                <td>@item.nombreEmpleado</td>
+                <td>@item.aPaterno </td>
+                <td>@item.nombreTipoUsuario </td>
+                <td>@item.nombreTipoContrato </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

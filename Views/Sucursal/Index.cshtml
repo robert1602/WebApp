@@ -7,15 +7,16 @@
 
 <h2>Index</h2>
 
-
+@Html.ActionLink("Agregar","Agregar","Sucursal",null,new { @class="btn btn-primary"})    
 <table  class="table table-bordered table-hover">
     <thead>
         <tr>
             <td width="10%">@Html.LabelFor(p => Model[0].iidSucursal)  </td>
             <td width="20%">@Html.LabelFor(p => Model[0].nombre)</td>
-            <td width="70%">@Html.LabelFor(p => Model[0].direccion) </td>
-            <td width="70%">@Html.LabelFor(p => Model[0].telefono) </td>
-            <td width="70%">@Html.LabelFor(p => Model[0].email) </td>
+            <td width="20%">@Html.LabelFor(p => Model[0].direccion) </td>
+            <td width="20%">@Html.LabelFor(p => Model[0].telefono) </td>
+            <td width="20%">@Html.LabelFor(p => Model[0].email) </td>
+            <td width="20%">@Html.LabelFor(p => Model[0].fechaApertura) </td>
         </tr>
     </thead>
 
@@ -29,6 +30,7 @@
             <td>@item.direccion</td>
             <td>@item.telefono</td>
             <td>@item.email</td>
+            <td>@item.fechaApertura</td>
         </tr>
         }
 

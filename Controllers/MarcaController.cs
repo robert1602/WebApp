@@ -28,5 +28,38 @@ namespace WebApp.Controllers
 
             return View(listaMarca);
         }
+
+
+       
+
+        [HttpPost]
+        public ActionResult Agregar(MarcaCLS omarcaCLS)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View(omarcaCLS);
+            }
+            else
+            {
+                using (var bd = new BDPasajeEntities())
+                {
+                    Marca marca = new Marca();
+                    marca.NOMBRE = omarcaCLS.nombre;
+                    marca.DESCRIPCION = omarcaCLS.descripcion;
+                    marca.BHABILITADO=1;
+                    bd.Marca.Add(marca);
+                    bd.SaveChanges();
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult Agregar()
+        {
+            return View();
+        }
     }
 }

@@ -8,16 +8,26 @@
 <h2>Index</h2>
 
 
-
+@Html.ActionLink("Agregar","Agregar","Cliente",null,new {@class="btn btn-primary "})
 
 <table class="table table-bordered table-hover ">
     <thead>
         <tr>
-            <td width="10">@Html.LabelFor(p => Model[0].iidcliente)</td>
+            <td width="30">@Html.LabelFor(p => Model[0].iidcliente)</td>
             <td width="10">@Html.LabelFor(p => Model[0].nombre)</td>
             <td width="10">@Html.LabelFor(p => Model[0].apPaterno)</td>
             <td width="10">@Html.LabelFor(p => Model[0].apMaterno)</td>
-            <td width="10">@Html.LabelFor(p => Model[0].telefonoFijo)</td>
+
+            <td width="10">@Html.LabelFor(p => Model[0].Email)</td>
+            <td  width="70%">@Html.LabelFor(p => Model[0].Direccion)</td>
+            <td width="10">@Html.LabelFor(p => Model[0].Iidsexo)</td>
+
+
+
+            <td width="10">@Html.LabelFor(p => Model[0].TelefonoFijo)</td>
+            <td width="10">@Html.LabelFor(p => Model[0].Telefonocelular)</td>
+
+
         </tr>
     </thead>
     <tbody>
@@ -28,11 +38,16 @@
             <td>@item.nombre</td>
             <td>@item.apPaterno</td>
             <td>@item.apMaterno</td>
-            <td>@item.telefonoFijo</td>
+
+            <td>@item.Email</td>
+            <td>@item.Direccion</td>
+            <td>@item.Iidsexo</td>
+
+
+            <td>@item.TelefonoFijo</td>
+            <td>@item.Telefonocelular</td>
         </tr>
 
         }
-
-
     </tbody>
 </table>
