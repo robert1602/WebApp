@@ -49,20 +49,20 @@
 
             <div>
                 @Html.LabelFor(p => p.Iidtipousuario)
-                @Html.DropDownList("Iidtipousuario", listaTipoUsuario, null, new { @class = "form-control" })
+                @Html.DropDownListFor(p=>p.Iidtipousuario, listaTipoUsuario, null, new { @class = "form-control" })
                 @Html.ValidationMessage("Iidtipousuario", new { @class = "text-danger" })
             </div>
 
 
             <div>
                 @Html.LabelFor(p => p.Iidtipocontrato)
-                @Html.DropDownList("Iidtipocontrato", listaTipoContrato, null, new { @class = "form-control" })
+                @Html.DropDownListFor(p=>p.Iidtipocontrato, listaTipoContrato, null, new { @class = "form-control" })
                 @Html.ValidationMessage("Iidtipocontrato", new { @class = "text-danger" })
             </div>
 
             <div>
                 @Html.LabelFor(p => p.Iidsexo)
-                @Html.DropDownList("Iidsexo", listaSexo, null, new { @class = "form-control" })
+                @Html.DropDownListFor(p => p.Iidsexo, listaSexo, null, new { @class = "form-control" })
                 @Html.ValidationMessage("Iidsexo", new { @class = "text-danger" })
             </div>
 

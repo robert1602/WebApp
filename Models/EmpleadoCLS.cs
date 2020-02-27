@@ -42,30 +42,31 @@ namespace WebApp.Models
 
         [Required]
         [Display(Name = "Tipo Usuario")]
-        public int? Iidtipousuario{ get; set; }
+        public int Iidtipousuario{ get; set; }
 
 
         [Required]
         [Display(Name = "Tipo Contrato")]
-        public int? Iidtipocontrato{ get; set; }
+        public int Iidtipocontrato{ get; set; }
 
 
         [Required]
         [Display(Name = "Sexo")]
-        public int? Iidsexo { get; set; }
+        public int Iidsexo { get; set; }
 
         public int bhabilitado { get; set; }
 
 
         //Propiedades adicionales
-        [Required]
-        [Display(Name = "Tipo Usuario")]
+        //[Required]
+        //[Display(Name = "Tipo Usuario")]
         public string nombreTipoUsuario { get; set; }
 
-        [Required]
-        [Display(Name = "Tipo Contrato")]
+        //[Required]
+        //[Display(Name = "Tipo Contrato")]
         public string nombreTipoContrato { get; set; }
 
 
     }
 }
+

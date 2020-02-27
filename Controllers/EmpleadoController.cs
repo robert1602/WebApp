@@ -20,6 +20,7 @@ namespace WebApp.Controllers
                                 on empl.IIDTIPOUSUARIO equals tipoUsuario.IIDTIPOUSUARIO
                                 join tipoContrato in bd.TipoContrato
                                 on empl.IIDTIPOCONTRATO equals tipoContrato.IIDTIPOCONTRATO
+                                where empl.BHABILITADO == 1
                                 select new EmpleadoCLS
                                 {
                                     Iiempleado = empl.IIDEMPLEADO,
@@ -107,13 +108,14 @@ namespace WebApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                listarCombos(); 
+                listarCombos();
                 return View(oEmpleadoCLS);
             }
             using (var db = new BDPasajeEntities())
             {
                 Empleado oEmpleado = new Empleado();
                 oEmpleado.IIDEMPLEADO = oEmpleadoCLS.Iiempleado;
+
                 oEmpleado.NOMBRE = oEmpleadoCLS.nombreEmpleado;
                 oEmpleado.APPATERNO = oEmpleadoCLS.aPaterno;
                 oEmpleado.APMATERNO = oEmpleadoCLS.apMaterno;
@@ -123,6 +125,7 @@ namespace WebApp.Controllers
                 oEmpleado.IIDTIPOCONTRATO = oEmpleadoCLS.Iidtipocontrato;
                 oEmpleado.IIDSEXO = oEmpleadoCLS.Iidsexo;
                 oEmpleado.BHABILITADO = 1;
+
                 db.Empleado.Add(oEmpleado);
                 db.SaveChanges();
                     
