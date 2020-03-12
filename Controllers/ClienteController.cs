@@ -91,6 +91,28 @@ namespace WebApp.Controllers
         }    
 
        
-        
+        public ActionResult Editar(int id)
+        {
+            ClienteCLS oClienteCLS = new ClienteCLS();
+            using (var db = new BDPasajeEntities())
+            {
+
+                SelectSexo();
+                ViewBag.lista = listaSexo;
+                Cliente oCliente = db.Cliente.Where(p => p.IIDCLIENTE.Equals(id)).First();
+                oClienteCLS.iidcliente = oCliente.IIDCLIENTE;
+                oClienteCLS.nombre = oCliente.NOMBRE;
+                oClienteCLS.apPaterno = oCliente.APPATERNO;
+                oClienteCLS.apMaterno = oCliente.APMATERNO;
+                oClienteCLS.Direccion = oCliente.DIRECCION;
+                oClienteCLS.Email = oCliente.EMAIL;
+                oClienteCLS.Iidsexo = oCliente.IIDSEXO;
+                oClienteCLS.Telefonocelular = oCliente.TELEFONOCELULAR;
+                oClienteCLS.TelefonoFijo = oCliente.TELEFONOFIJO;
+
+            }
+
+            return View(oClienteCLS);
+        }
     }
 }

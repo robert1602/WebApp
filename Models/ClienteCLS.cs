@@ -34,6 +34,7 @@ namespace WebApp.Models
 
         [Required]
         [Display(Name = "Dirección")]
+        [DataType(DataType.MultilineText)]
         [StringLength(200, ErrorMessage = "Longitud Maxima 200")]
         public string Direccion { get; set; }
 
